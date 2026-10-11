@@ -1,0 +1,524 @@
+Arga, saya sudah telusuri GitHub dengan fokus pada **project yang benar-benar relevan dengan Scholar**: bukan sekadar editor mirip Notion, tetapi yang punya konsep **block + database + view + relation + linked/embedded data + flexible workspace**.
+
+Dan ada temuan yang cukup penting: **referensi terbaik untuk Scholar bukan satu repo saja.** Ada beberapa proyek yang masing-masing unggul pada bagian berbeda.
+
+## Ranking yang paling layak dipelajari
+
+| Rank | Project | GitHub stars* | Relevansi ke Scholar | Yang paling layak ditiru |
+|---|---|---:|---|---|
+| 1 | **AppFlowy** | ~77k | ⭐⭐⭐⭐⭐ | Database architecture, linked views, relations, row-as-page, flexible blocks |
+| 2 | **AFFiNE** | ~73k | ⭐⭐⭐⭐⭐ | Canvas, blocks, database embedding, free-form layout |
+| 3 | **SiYuan** | ~46k | ⭐⭐⭐⭐½ | Block references, embeds, database blocks, document/data separation |
+| 4 | **Outline** | ~40k | ⭐⭐⭐ | UI/UX, navigation, typography, clean workspace |
+| 5 | **TriliumNext** | ~38k | ⭐⭐⭐½ | Hierarchy, knowledge graph, flexible content structure |
+| 6 | **Docmost** | ~22k | ⭐⭐⭐½ | Clean collaborative workspace, editor architecture |
+| 7 | **Anytype** | ~9k | ⭐⭐⭐⭐⭐ | Object + relation + filtered view model |
+| 8 | **Zotion** | 175 | ⭐⭐⭐ | React/Next implementation yang lebih mudah dibaca |
+| 9 | **CodeWithAntonio-style clones** | puluhan–ratusan | ⭐⭐⭐ | Implementasi Notion clone yang sederhana untuk web |
+
+\*Jumlah stars berubah terus; angka di atas adalah hasil penelusuran GitHub saat ini. [GitHub](https://github.com/appflowy-io/appflowy?utm_source=chatgpt.com)
+
+---
+
+# 1. AppFlowy — REFERENSI TERPENTING UNTUK SCHOLAR
+
+[AppFlowy GitHub](https://github.com/AppFlowy-IO/AppFlowy?utm_source=chatgpt.com)
+
+Ini yang paling saya rekomendasikan Anda **bedah mekaniknya**, bukan sekadar lihat tampilannya.
+
+AppFlowy memang dibangun sebagai alternatif Notion dan memiliki konsep database dengan berbagai view. Repository utamanya sekarang sekitar **77k stars** dan sangat aktif. [GitHub](https://github.com/appflowy-io/appflowy?utm_source=chatgpt.com)
+
+Yang menarik justru dokumentasi internalnya.
+
+AppFlowy memodelkan database dengan konsep:
+
+```text
+Database
+   │
+   ├── Field
+   │
+   ├── Row
+   │     ├── Cell
+   │     ├── Cell
+   │     └── Cell
+   │
+   ├── View
+   │
+   ├── Filter
+   │
+   └── Sort
+```
+
+Mereka secara eksplisit memisahkan **Row sebagai data**, **Field sebagai property**, dan **View sebagai cara menampilkan data**. Pada Kanban, setiap card sebenarnya merupakan row dari database yang sama. [GitHub](https://github.com/AppFlowy-IO/AppFlowy-Docs/blob/main/essential-documentation/contribute-to-appflowy/write-for-appflowy/drafts/draft-how-to-add-a-new-property-to-appflowy-database.md?utm_source=chatgpt.com)
+
+Ini **persis masalah yang sedang Anda hadapi sekarang**.
+
+### Yang harus Anda curi konsepnya
+
+Bukan source code-nya, tetapi model:
+
+```text
+DATABASE
+    ↓
+ROWS / RECORDS
+    ↓
+VIEWS
+    ↓
+UI
+```
+
+Jadi:
+
+```text
+Schedule DB
+ ├── Table View
+ ├── Calendar View
+ └── Board View
+```
+
+dan bukan:
+
+```text
+Dashboard Schedule Data
+Schedule Table Data
+Calendar Data
+```
+
+---
+
+## Lebih menarik lagi: AppFlowy bahkan mengalami masalah yang sama dengan ide Anda
+
+Ada issue di AFFiNE tentang **cross-page linked database** yang sangat mirip dengan yang Anda inginkan: satu database dibuat di suatu halaman, lalu ditampilkan di halaman lain sebagai linked view dengan filter berbeda. Diskusinya bahkan secara eksplisit membahas konsep yang setara dengan **Notion linked database**. [GitHub](https://github.com/toeverything/AFFiNE/discussions/12633?utm_source=chatgpt.com)
+
+Artinya kebutuhan Anda bukan aneh atau overengineering. Ini memang salah satu masalah arsitektur inti aplikasi Notion-like.
+
+### AppFlowy juga sudah memiliki:
+
+- multiple database views
+- Table
+- Board
+- Calendar
+- Gallery
+- List
+- Chart
+- Feed
+- Relation
+- Rollup
+- advanced filters
+- grouping
+- database search
+- row sebagai independent page
+- drag/reorder view
+- cover images [GitHub](https://github.com/AppFlowy-IO/AppFlowy/blob/main/CHANGELOG.md?utm_source=chatgpt.com)
+
+Yang sangat relevan dengan permintaan Anda:
+
+> **database row dapat menjadi page sendiri**
+
+Ini cocok sekali dengan ide Anda bahwa card/activity bisa membuka detail dan tetap menjadi record asli.
+
+---
+
+# 2. AFFiNE — REFERENSI TERBAIK UNTUK GRID/CANVAS
+
+[AFFiNE GitHub](https://github.com/toeverything/AFFiNE?utm_source=chatgpt.com)
+
+AFFiNE sekarang sekitar **73k stars** dan secara eksplisit menggabungkan **docs + canvas + tables**. [GitHub](https://github.com/toeverything/affine)
+
+Ini justru yang paling dekat dengan permintaan Anda soal:
+
+> "Saya mau section bisa digeser kanan/kiri/atas/bawah dan dibesarkan."
+
+AFFiNE mendeskripsikan dirinya sebagai **edgeless canvas** yang dapat berisi berbagai building block:
+
+- rich text
+- sticky notes
+- embedded pages
+- multi-view databases
+- linked pages
+- shapes
+- slides [GitHub](https://github.com/toeverything/affine)
+
+### Ini penting untuk Scholar
+
+Konsep Dashboard Anda seharusnya:
+
+```text
+Dashboard
+      ↓
+Canvas
+      ↓
+Block
+      ├── Text
+      ├── Image
+      ├── Quote
+      ├── Database
+      ├── Record
+      └── Related DB
+```
+
+Bukan:
+
+```text
+Dashboard
+  ├── AboutMeCard
+  ├── ScheduleCard
+  ├── HabitsCard
+  └── ProgressCard
+```
+
+Itulah perbedaan besar antara **workspace engine** dan **dashboard hardcoded**.
+
+---
+
+# 3. SiYuan — MENARIK UNTUK "DATA REFERENCE"
+
+[SiYuan GitHub](https://github.com/siyuan-note/siyuan?utm_source=chatgpt.com)
+
+SiYuan sekarang sekitar **46k stars**. Ia adalah knowledge workspace berbasis block dengan fitur block reference, two-way link, embed, database/table, dan API. [GitHub](https://github.com/siyuan-note/siyuan?ref=selfh.st\&utm_source=chatgpt.com)
+
+Ini relevan dengan ide Anda:
+
+> "di dalam card juga seharusnya bisa manggil DB lain"
+
+SiYuan banyak bermain di konsep:
+
+```text
+Block
+ ↓
+Reference
+ ↓
+Referenced content
+```
+
+Ada juga diskusi mereka tentang **mirror database** dan bagaimana view suatu database dapat ditampilkan secara terpisah, termasuk kebutuhan agar konfigurasi view pada mirror tidak saling mengganggu. [GitHub](https://github.com/siyuan-note/siyuan/issues/10734?utm_source=chatgpt.com)
+
+### Pelajaran untuk Scholar
+
+Anda bisa membuat:
+
+```text
+Activity Card
+
+Activity ID:
+activity_01
+
+Referenced:
+schedule_08
+task_13
+goal_02
+```
+
+UI cukup menampilkan:
+
+```text
+Bootcamp Power BI
+
+Schedule
+Wed · 19:00–21:00
+
+Tasks
+2 pending
+
+Goal
+Become Data Analyst
+```
+
+Tetapi underlying data tetap berasal dari record asli.
+
+---
+
+# 4. Anytype — REFERENSI ARSITEKTUR RELATION
+
+[Anytype GitHub](https://github.com/anyproto/anytype-ts?utm_source=chatgpt.com)
+
+Anytype memang berbeda dari Notion. Modelnya lebih dekat ke:
+
+```text
+Object
+   ↓
+Type
+   ↓
+Relation
+   ↓
+Set / View
+```
+
+Repository client resminya sekitar **8.9k stars**. [GitHub](https://github.com/anyproto/anytype-ts?utm_source=chatgpt.com)
+
+Dokumentasi mereka menjelaskan pendekatan:
+
+- typed objects
+- relations
+- sets
+- filtered views
+- local-first object graph. [GitHub](https://github.com/anyproto/docs?utm_source=chatgpt.com)
+
+Ini sangat relevan untuk fase lanjutan Scholar.
+
+Misalnya:
+
+```text
+Activity
+   │
+   ├── Schedule
+   ├── Tasks
+   ├── Goals
+   └── Assignments
+```
+
+Daripada Anda membuat relasi hardcoded:
+
+```text
+activity.scheduleId
+activity.taskId
+activity.goalId
+```
+
+kelak Anda bisa membuat sistem property relation yang lebih generik.
+
+Tapi **jangan implementasikan tingkat kompleksitas Anytype sekarang**. Itu terlalu berat untuk Scholar.
+
+---
+
+# 5. TriliumNext — BAGUS UNTUK HIERARCHY + CONTENT
+
+[TriliumNext GitHub](https://github.com/TriliumNext/Trilium?utm_source=chatgpt.com)
+
+Sekitar **38k stars** dan sangat matang sebagai personal knowledge base. [GitHub](https://github.com/TriliumNext/trilium?utm_source=chatgpt.com)
+
+Yang saya ambil dari sini bukan database engine-nya, tetapi:
+
+```text
+Workspace
+   ↓
+Hierarchy
+   ↓
+Pages
+   ↓
+Content
+```
+
+Cocok untuk konsep:
+
+```text
+Scholar
+ ├── Career
+ │    ├── Data Analyst
+ │    └── Projects
+ │
+ ├── Study
+ └── Personal
+```
+
+---
+
+# 6. Outline — JANGAN TIRU MEKANIK, TIRU UI/UX
+
+[Outline GitHub](https://github.com/outline/outline?utm_source=chatgpt.com)
+
+Sekitar **40k stars**. [GitHub](https://github.com/outline/outline?ref=fossalternative.com\&utm_source=chatgpt.com)
+
+Outline bukan referensi database terbaik untuk Scholar.
+
+Tapi untuk permintaan Anda tentang:
+
+> "AI anti-slop"
+
+Outline justru layak dilihat sebagai **referensi visual**.
+
+Kenapa?
+
+Karena ia cenderung:
+
+```text
+less decoration
+more hierarchy
+more whitespace
+less card overload
+```
+
+Jadi untuk Scholar:
+
+**AppFlowy → architecture**
+
+**AFFiNE → canvas**
+
+**SiYuan → references/embedding**
+
+**Anytype → relation model**
+
+**Outline → visual discipline**
+
+Itu kombinasi yang jauh lebih masuk akal.
+
+---
+
+# 7. Docmost — CLEAN NOTION-LIKE WORKSPACE
+
+[Docmost GitHub](https://github.com/docmost/docmost?utm_source=chatgpt.com)
+
+Docmost sekarang sekitar **22k stars**. Ia open-source collaborative wiki yang memosisikan diri sebagai alternatif Notion/Confluence. [GitHub](https://github.com/Docmost/docmost?utm_source=chatgpt.com)
+
+Yang menarik adalah ada fork komunitas **Docmost-db** yang secara eksplisit menambahkan:
+
+> Notion-style database views  
+> Table / Board  
+> filtering  
+> sorting  
+> bulk editing [GitHub](https://github.com/JunHCha/docmost-db?utm_source=chatgpt.com)
+
+
+Ini worth checking kalau Anda ingin melihat bagaimana **database dipasang ke dalam document/wiki architecture**.
+
+---
+
+# 8. Zotion — PALING MUDAH UNTUK DIPELAJARI
+
+[Zotion GitHub](https://github.com/adityaphasu/notion-clone?utm_source=chatgpt.com)
+
+Ini jauh lebih kecil, tetapi menarik karena source-nya relatif mudah dipahami.
+
+Sekitar **175 stars**, menggunakan:
+
+```text
+Next.js
+TypeScript
+Convex
+BlockNote
+Tailwind
+Clerk
+EdgeStore
+```
+
+dan mendukung hierarchy, drag-and-drop, realtime database, editor, dan cover/image. [GitHub](https://github.com/adityaphasu/notion-clone?utm_source=chatgpt.com)
+
+Ini lebih cocok untuk:
+
+> "bagaimana cara implementasi Notion-style app menggunakan React/Next secara realistis?"
+
+daripada mencoba memahami AppFlowy yang skalanya sangat besar.
+
+---
+
+# Temuan yang paling penting untuk Scholar
+
+Ada satu repo yang bahkan **lebih relevan dengan problem Anda daripada sekadar clone UI**:
+
+### AppFlowy Web
+
+[AppFlowy Web GitHub](https://github.com/AppFlowy-IO/AppFlowy-Web?utm_source=chatgpt.com)
+
+Repository ini sekarang menyediakan database Grid/Kanban dan fitur content management. [GitHub](https://github.com/AppFlowy-IO/AppFlowy-Web?utm_source=chatgpt.com)
+
+Lebih penting lagi, history development mereka memperlihatkan fitur:
+
+> **"feat(database): add Notion-style dashboard view"**
+
+pada September 2026. [GitHub](https://github.com/AppFlowy-IO/AppFlowy-Web/pulls?utm_source=chatgpt.com)
+
+Ini sangat dekat dengan apa yang sedang Anda bangun.
+
+---
+
+# Jadi untuk Scholar, saya akan mengambil pola ini
+
+```text
+                    SCHOLAR
+                       │
+                ┌──────▼──────┐
+                │  WORKSPACE  │
+                └──────┬──────┘
+                       │
+                 ┌─────▼─────┐
+                 │   CANVAS  │
+                 └─────┬─────┘
+                       │
+        ┌──────────────┼───────────────┐
+        ▼              ▼               ▼
+      BLOCK          BLOCK           BLOCK
+        │              │               │
+     Linked DB       Image          Record
+        │                              │
+        ▼                              ▼
+   Schedule DB                    Activity DB
+        │                              │
+        ├── Table                     ├── Relation → Schedule
+        ├── Calendar                  ├── Relation → Tasks
+        └── Board                     └── Relation → Goals
+```
+
+### Database layer
+
+```text
+Database
+  │
+  ├── id
+  ├── fields
+  ├── records
+  └── views
+```
+
+### View layer
+
+```text
+View
+  │
+  ├── databaseId
+  ├── type
+  ├── filters
+  ├── sorts
+  ├── grouping
+  └── visibleProperties
+```
+
+### Dashboard layer
+
+```text
+Dashboard
+  │
+  └── Blocks
+        │
+        ├── type
+        ├── sourceDatabaseId
+        ├── sourceRecordId
+        ├── viewId
+        └── layout
+             ├── x
+             ├── y
+             ├── width
+             └── height
+```
+
+Ini menurut saya **arsitektur yang jauh lebih tepat** untuk target Scholar daripada sekadar memperbanyak component Dashboard.
+
+---
+
+# Mana yang perlu Anda pelajari dulu?
+
+Saya tidak menyarankan Anda clone lima project sekaligus. Itu hanya akan membuat Anda membuang waktu.
+
+Prioritasnya:
+
+### 1. AppFlowy
+Pelajari **database → row → field → view → relation → filter → sort**.  
+Ini referensi nomor satu untuk backend/data model Scholar. [GitHub](https://github.com/AppFlowy-IO/AppFlowy-Docs/blob/main/essential-documentation/contribute-to-appflowy/write-for-appflowy/drafts/draft-how-to-add-a-new-property-to-appflowy-database.md?utm_source=chatgpt.com)
+
+### 2. AFFiNE
+Pelajari **block/canvas/embedding/layout**.  
+Ini referensi nomor satu untuk Dashboard yang Anda inginkan. [GitHub](https://github.com/toeverything/affine)
+
+### 3. SiYuan
+Pelajari **reference, embed, mirror, block relationship**. [GitHub](https://github.com/siyuan-note/siyuan/issues/10734?utm_source=chatgpt.com)
+
+### 4. Anytype
+Pelajari **relation/object/set** ketika Scholar sudah masuk fase advanced. [GitHub](https://github.com/anyproto/docs?utm_source=chatgpt.com)
+
+### 5. Zotion
+Gunakan untuk melihat **implementasi React/Next yang jauh lebih sederhana**, bukan sebagai sumber arsitektur utama. [GitHub](https://github.com/adityaphasu/notion-clone?utm_source=chatgpt.com)
+
+---
+
+**Kesimpulan saya:** untuk Scholar, jangan membuat "Notion clone". Ambil **mekanik AppFlowy + canvas AFFiNE + reference SiYuan + relation Anytype**, kemudian bungkus dengan UX yang jauh lebih sederhana dan planner-oriented.
+
+Yang bahkan menarik: kebutuhan **linked database lintas halaman** yang Anda minta ternyata memang menjadi persoalan arsitektur nyata pada produk sekelas AFFiNE—jadi keputusan Anda menjadikan `databaseId → recordId → viewId → blockId` sebagai tulang punggung adalah arah yang benar. [GitHub](https://github.com/toeverything/AFFiNE/discussions/12633?utm_source=chatgpt.com)

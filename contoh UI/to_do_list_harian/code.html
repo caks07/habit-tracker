@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#98b9d3", "surface-elevated": "#2A2A2A", "inverse-on-surface": "#313030", "secondary-container": "#284a60", "accent-green-subtle": "rgba(89, 161, 79, 0.15)", "on-surface": "#e5e2e1", "primary-fixed": "#ffdbcf", "tertiary-fixed": "#c7ecca", "surface-dim": "#131313", "on-tertiary-fixed-variant": "#2e4e35", "background": "#131313", "tertiary-fixed-dim": "#abd0af", "error-container": "#93000a", "inverse-primary": "#a23e18", "surface-variant": "#353535", "surface-container": "#201f1f", "on-tertiary": "#173720", "on-surface-variant": "#dec0b7", "accent-yellow": "#EDC949", "on-error-container": "#ffdad6", "accent-blue-subtle": "rgba(78, 121, 167, 0.15)", "outline": "#a58b83", "on-primary-fixed": "#390c00", "inverse-surface": "#e5e2e1", "surface-bright": "#393939", "surface-tint": "#ffb59c", "surface-border": "#383838", "surface-container-highest": "#353535", "outline-variant": "#57423b", "primary-container": "#e46f45", "on-primary": "#5c1900", "on-primary-fixed-variant": "#822801", "on-background": "#e5e2e1", "surface-container-high": "#2a2a2a", "accent-terracotta-subtle": "rgba(200, 90, 50, 0.15)", "on-error": "#690005", "on-primary-container": "#511500", "accent-green": "#59A14F", "error": "#ffb4ab", "text-muted": "#686560", "tertiary-container": "#77997b", "primary": "#ffb59c", "bg-base": "#141414", "accent-terracotta": "#C85A32", "secondary-fixed-dim": "#a9cbe5", "accent-blue": "#4E79A7", "on-tertiary-fixed": "#02210c", "secondary": "#a9cbe5", "secondary-fixed": "#c8e6ff", "tertiary": "#abd0af", "on-secondary-fixed": "#001e2e", "on-tertiary-container": "#103019", "text-secondary": "#A8A49C", "on-secondary": "#0e3448", "surface": "#131313", "surface-card": "#202020", "surface-container-low": "#1c1b1b", "primary-fixed-dim": "#ffb59c", "text-primary": "#F0EDE6", "surface-container-lowest": "#0e0e0e", "on-secondary-fixed-variant": "#284a60" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "1.5rem", "margin-desktop": "3rem", "margin": "1rem", "space-md": "1rem", "gutter": "1rem", "margin-tablet": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem" }, "fontFamily": { "label-md": ["Courier Prime"], "body-md": ["Courier Prime"], "headline-md": ["Space Grotesk"], "body-lg": ["Courier Prime"], "headline-sm": ["Space Grotesk"], "label-sm": ["Courier Prime"], "display": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-sm": ["Courier Prime"], "headline-lg-mobile": ["Space Grotesk"] }, "fontSize": { "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }], "body-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "400" }], "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between py-space-sm"><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs mx-space-xs flex items-center justify-between hover:bg-surface-container-high rounded cursor-pointer transition-colors"><div class="flex items-center gap-space-sm"><div class="w-5 h-5 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm">S</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">Scholar</span><span class="font-label-sm text-label-sm text-text-muted mt-0.5">Workspace v2.4</span></div></div><div class="flex items-center text-text-muted hover:text-on-surface"><span class="material-symbols-outlined text-[16px]">unfold_more</span></div></div><div class="px-space-sm mt-space-xs"><div class="w-full flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded text-text-muted hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[15px]">search</span><span class="font-body-sm text-body-sm flex-1 text-left">Search workspace...</span><kbd class="font-label-sm text-label-sm px-1 bg-surface-container-highest text-on-surface-variant rounded">⌘K</kbd></div></div><div class="px-space-sm mt-space-xs"><div class="flex items-center justify-between text-text-muted px-space-xs py-0.5"><span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Navigation</span><span class="font-label-sm text-label-sm text-text-muted">5</span></div></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm rounded"><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="scholar-overview" href="#"><span class="material-symbols-outlined text-[16px]">dashboard</span><span>Scholar Overview</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="jadwal-schedule" href="#"><span class="material-symbols-outlined text-[16px]">calendar_today</span><span>Jadwal &amp; Schedule</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="milestone-skripsi-coding" href="#"><span class="material-symbols-outlined text-[16px]">terminal</span><span>Milestone Skripsi &amp; Coding</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="activity-bootcamps" href="#"><span class="material-symbols-outlined text-[16px]">military_tech</span><span>Activity &amp; Bootcamps</span></a><a aria-current="page" class="flex items-center gap-space-xs px-space-sm py-1.5 transition-colors bg-primary-container text-on-primary-container font-headline-sm rounded" data-path="daily-to-do-list" href="#"><span class="material-symbols-outlined text-[16px]">check_box</span><span>Daily To-Do List</span></a></nav><div class="px-space-sm mt-space-sm"><button class="w-full flex items-center justify-center gap-space-xs py-1.5 px-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors text-left" type="button"><span class="material-symbols-outlined text-[15px]">add</span><span>Add New Section</span><span class="font-label-sm text-label-sm text-text-muted ml-auto bg-surface-container-low px-1 rounded">Preset</span></button></div></div><div class="px-space-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between px-space-xs py-1 text-text-muted"><span class="font-label-sm text-label-sm">STATUS: DRAFTING</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-accent-green"></span><span class="font-label-sm text-label-sm text-accent-green">SYNCED</span></div></div><div class="w-full flex items-center gap-space-xs p-space-xs rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors"><div class="w-6 h-6 rounded bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[14px]">person</span></div><div class="flex flex-col flex-1 overflow-hidden"><span class="font-label-md text-label-md text-on-surface truncate">Scholar Lead</span><span class="font-label-sm text-label-sm text-text-muted truncate">academic-desk@scholar.io</span></div><span class="material-symbols-outlined text-text-muted text-[16px]">settings</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-12 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-xs text-text-muted font-body-sm text-body-sm"><button class="p-1 hover:bg-surface-container-high hover:text-on-surface rounded transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">menu_open</span></button><span class="hover:text-on-surface cursor-pointer">Scholar</span><span class="text-outline-variant font-label-sm text-label-sm">/</span><span class="text-on-surface font-label-md text-label-md bg-accent-terracotta-subtle text-accent-terracotta px-1.5 py-0.5 rounded-full">Active Dossier</span></div><div class="flex items-center gap-space-xs"><button class="flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[15px]">filter_list</span><span>Filter</span></button><button class="flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[15px]">swap_vert</span><span>Sort</span></button><div class="w-px h-3.5 bg-surface-border"></div><button class="flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[15px]">share</span><span>Share</span></button><button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Lock Page" type="button"><span class="material-symbols-outlined text-[15px]">lock_open</span></button><button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Toggle Width" type="button"><span class="material-symbols-outlined text-[15px]">open_in_full</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-12 min-h-screen bg-surface px-space-lg py-space-md"><div class="max-w-[1180px] mx-auto w-full"><div class="flex flex-col w-full">
+<!-- Top Dossier Action Header & View Switcher -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-terracotta"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">DOSSIER // ROUTINE EXECUTION</span>
+</div>
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">To do List Harian</h1>
+<span class="font-label-md text-label-md text-text-muted">W-42 // 2024</span>
+</div>
+</div>
+<!-- Toolbar controls matching the editorial terminal aesthetic -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- View mode segment -->
+<div class="flex items-center p-0.5 rounded bg-surface-container-high">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-elevated text-on-surface font-label-md text-label-md transition-colors" id="view-board-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">view_column</span>
+<span>Board</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded text-text-muted hover:text-on-surface font-label-md text-label-md transition-colors" id="view-table-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">table_rows</span>
+<span>Table</span>
+</button>
+</div>
+<div class="w-px h-5 bg-surface-variant mx-1 hidden sm:block"></div>
+<!-- Quick Action Buttons -->
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-surface-container hover:bg-surface-elevated text-on-surface font-body-sm text-body-sm transition-colors" onclick="openNewCardModal()" type="button">
+<span class="material-symbols-outlined text-[15px] text-accent-terracotta">add_task</span>
+<span>Add Task</span>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-surface-container hover:bg-surface-elevated text-on-surface font-body-sm text-body-sm transition-colors" onclick="addNewColumnPrompt()" type="button">
+<span class="material-symbols-outlined text-[15px]">view_week</span>
+<span>+ Add Day</span>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-surface-container hover:bg-surface-elevated text-text-secondary hover:text-on-surface font-body-sm text-body-sm transition-colors" id="palette-toggle-btn" title="Customize Column Colors" type="button">
+<span class="material-symbols-outlined text-[15px]">palette</span>
+<span class="hidden lg:inline">Theme</span>
+</button>
+</div>
+</div>
+<!-- Weekly Digest Metric Banner -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm mb-space-xl p-space-md rounded bg-surface-container-low">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-muted">TOTAL LOAD</span>
+<span class="font-headline-md text-headline-md text-text-primary">23 Tasks</span>
+<div class="w-full bg-surface-container-highest h-1 rounded mt-1.5 overflow-hidden">
+<div class="bg-accent-green h-full w-[65%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-muted">COMPLETED</span>
+<span class="font-headline-md text-headline-md text-accent-green">14 / 23</span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1.5">60.8% throughput</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-muted">IMPEDIMENT</span>
+<span class="font-headline-md text-headline-md text-error">3 Canceled</span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1.5">Skripsi &amp; Outdoor</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-muted">FOCUS PRIORITY</span>
+<span class="font-headline-md text-headline-md text-secondary">Skripsi Ch. 2</span>
+<span class="font-label-sm text-label-sm text-text-muted mt-1.5">Target: Kamis 16:00</span>
+</div>
+</div>
+<!-- Kanban Multi-Column Board Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md items-start w-full" id="board-container">
+<!-- COLUMN: SENIN (Green Tinted Theme) -->
+<div class="flex flex-col rounded bg-surface-container p-space-sm shadow-sm gap-space-sm transition-all" data-col="senin">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-accent-green-subtle text-accent-green">
+            Senin
+          </span>
+<span class="font-label-sm text-label-sm text-text-muted">7</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" title="Quick Add" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Task Cards Stack -->
+<div class="flex flex-col gap-space-xs" id="cards-senin">
+<!-- Card 1: Olahraga -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-yellow/20 text-accent-yellow">
+              Olahraga
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1">06.00 - 07.00</span>
+<div class="flex flex-col gap-1 mt-1 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box</span>
+<span class="line-through text-text-muted">Jalan 45 Menit</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box</span>
+<span class="line-through text-text-muted">Jalan 45 Menit</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Hiburan -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">07.00 - 08.00</span>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-blue-subtle text-secondary">
+              Hiburan
+            </span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-body-sm text-body-sm mb-2">
+<span class="material-symbols-outlined text-[14px] text-text-muted">menu_book</span>
+<span>Baca Atomic Habits</span>
+</div>
+<div class="flex items-center">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+              Baca
+            </span>
+</div>
+</div>
+<!-- Card 3: Skripsi (Canceled) -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-terracotta-subtle text-accent-terracotta">
+              Skripsi
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-2">08.00 - 11.00</span>
+<div class="flex items-center gap-1.5 text-text-secondary font-body-sm text-body-sm mb-2.5">
+<span class="material-symbols-outlined text-[14px] text-text-muted">notes</span>
+<span>Ga ada</span>
+</div>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-terracotta-subtle text-accent-terracotta">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-terracotta"></span>
+<span>Canceled</span>
+</span>
+</div>
+</div>
+<!-- Card 4: Malam Routine -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">19.00 - 21.30</span>
+<div class="flex items-center gap-1.5 text-text-primary font-body-sm text-body-sm mb-2">
+<span class="material-symbols-outlined text-[14px] text-accent-green">terminal</span>
+<span>Belajar Laravel &amp; Tailwind API</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-green-subtle text-accent-green">
+              Coding
+            </span>
+</div>
+</div>
+</div>
+<!-- Quick Add Task Field in Column -->
+<div class="mt-space-xs pt-1">
+<button class="w-full flex items-center gap-1.5 px-space-xs py-1.5 text-text-muted hover:text-on-surface hover:bg-surface-elevated rounded font-body-sm text-body-sm transition-colors text-left" onclick="quickInlineAdd('senin')" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add card</span>
+</button>
+</div>
+</div>
+<!-- COLUMN: SELASA (Terracotta/Mauve Tinted Theme) -->
+<div class="flex flex-col rounded bg-surface-container p-space-sm shadow-sm gap-space-sm transition-all" data-col="selasa">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-accent-terracotta-subtle text-accent-terracotta">
+            Selasa
+          </span>
+<span class="font-label-sm text-label-sm text-text-muted">8</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" title="Quick Add" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Task Cards Stack -->
+<div class="flex flex-col gap-space-xs" id="cards-selasa">
+<!-- Card 1: Olahraga -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-yellow/20 text-accent-yellow">
+              Olahraga
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1">06.00 - 07.00</span>
+<div class="flex flex-col gap-1 mt-1 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box_outline_blank</span>
+<span>Jalan 45 menit</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box_outline_blank</span>
+<span>Jalan 45 menit</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Hiburan -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">07.00 - 08.00</span>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-blue-subtle text-secondary">
+              Hiburan
+            </span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-body-sm text-body-sm mb-2">
+<span class="material-symbols-outlined text-[14px] text-text-muted">book</span>
+<span>Baca novel</span>
+</div>
+<div class="flex items-center">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+              Baca
+            </span>
+</div>
+</div>
+<!-- Card 3: Skripsi (Canceled) -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-terracotta-subtle text-accent-terracotta">
+              Skripsi
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-2">08.00 - 12.00</span>
+<div class="flex items-start gap-1.5 text-text-secondary font-body-sm text-body-sm mb-2.5">
+<span class="material-symbols-outlined text-[14px] text-text-muted mt-0.5">article</span>
+<span class="leading-snug">Tulis Pendahuluan Paragraf 1-2</span>
+</div>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-terracotta-subtle text-accent-terracotta">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-terracotta"></span>
+<span>Canceled</span>
+</span>
+</div>
+</div>
+<!-- Card 4: Bootcamp Data Analyst -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">19.00 - 21.30</span>
+<div class="flex items-center gap-1.5 text-text-primary font-body-sm text-body-sm mb-2">
+<span class="material-symbols-outlined text-[14px] text-accent-blue">insights</span>
+<span>Bootcamp: SQL Data Analysis</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-blue-subtle text-secondary">
+              Bootcamp
+            </span>
+</div>
+</div>
+</div>
+<!-- Quick Add Task Field in Column -->
+<div class="mt-space-xs pt-1">
+<button class="w-full flex items-center gap-1.5 px-space-xs py-1.5 text-text-muted hover:text-on-surface hover:bg-surface-elevated rounded font-body-sm text-body-sm transition-colors text-left" onclick="quickInlineAdd('selasa')" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add card</span>
+</button>
+</div>
+</div>
+<!-- COLUMN: RABU (Slate Blue Tinted Theme) -->
+<div class="flex flex-col rounded bg-surface-container p-space-sm shadow-sm gap-space-sm transition-all" data-col="rabu">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-accent-blue-subtle text-secondary">
+            Rabu
+          </span>
+<span class="font-label-sm text-label-sm text-text-muted">7</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" title="Quick Add" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Task Cards Stack -->
+<div class="flex flex-col gap-space-xs" id="cards-rabu">
+<!-- Card 1: Olahraga Pagi -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-yellow/20 text-accent-yellow">
+              Olahraga
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1">05.30 - 06.30</span>
+<div class="flex flex-col gap-1 mt-1 text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box_outline_blank</span>
+<span>Jalan 30 menit</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-text-muted">check_box_outline_blank</span>
+<span>Jalan 30 menit</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Kuliah / Bootcamp BI Analyst -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">19.00 - 21.00</span>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-green-subtle text-accent-green">
+              Kuliah
+            </span>
+</div>
+<div class="flex items-start gap-1.5 text-text-primary font-body-sm text-body-sm mb-2.5">
+<span class="material-symbols-outlined text-[14px] text-text-muted mt-0.5">query_stats</span>
+<span class="leading-snug">Bootcamp Business Intelligence Analyst with Power BI</span>
+</div>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span>
+<span>Not started</span>
+</span>
+</div>
+</div>
+<!-- Card 3: Kuliah Kampung Inggris -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">20.00 - 21.00</span>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-green-subtle text-accent-green">
+              Kuliah
+            </span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-body-sm text-body-sm mb-2.5">
+<span class="material-symbols-outlined text-[14px] text-text-muted">translate</span>
+<span>Kampung Inggris Online</span>
+</div>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span>
+<span>Not started</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Quick Add Task Field in Column -->
+<div class="mt-space-xs pt-1">
+<button class="w-full flex items-center gap-1.5 px-space-xs py-1.5 text-text-muted hover:text-on-surface hover:bg-surface-elevated rounded font-body-sm text-body-sm transition-colors text-left" onclick="quickInlineAdd('rabu')" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add card</span>
+</button>
+</div>
+</div>
+<!-- COLUMN: KAMIS (Upcoming / Open Agenda) -->
+<div class="flex flex-col rounded bg-surface-container p-space-sm shadow-sm gap-space-sm transition-all" data-col="kamis">
+<!-- Column Header -->
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-surface-container-highest text-on-surface-variant">
+            Kamis
+          </span>
+<span class="font-label-sm text-label-sm text-text-muted">3</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted">
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" title="Quick Add" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="hover:text-on-surface p-0.5 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Task Cards Stack -->
+<div class="flex flex-col gap-space-xs" id="cards-kamis">
+<!-- Card 1: Review Dosen Pembimbing -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-terracotta-subtle text-accent-terracotta">
+              Skripsi
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">13.00 - 15.00</span>
+<div class="flex items-start gap-1.5 text-text-primary font-body-sm text-body-sm mb-2">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">school</span>
+<span>Bimbingan Bab 1 &amp; 2 via Zoom</span>
+</div>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-yellow"></span>
+<span class="text-accent-yellow">Pending Confirmation</span>
+</span>
+</div>
+</div>
+<!-- Card 2: Rest & Recovery -->
+<div class="group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span>New page</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted mb-1.5">16.30 - 18.00</span>
+<div class="flex flex-wrap items-center gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-accent-yellow/20 text-accent-yellow">
+              Olahraga
+            </span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px] text-text-muted">fitness_center</span>
+<span>Gym Session: Upper Body</span>
+</div>
+</div>
+<!-- Add Blank Placeholder / Quick Drop Zone -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col items-center justify-center text-center gap-1 hover:bg-surface-elevated cursor-pointer transition-colors" onclick="quickInlineAdd('kamis')">
+<span class="material-symbols-outlined text-text-muted text-[20px]">add_circle_outline</span>
+<span class="font-label-sm text-label-sm text-text-muted">Drop task or click to add</span>
+</div>
+</div>
+<!-- Quick Add Task Field in Column -->
+<div class="mt-space-xs pt-1">
+<button class="w-full flex items-center gap-1.5 px-space-xs py-1.5 text-text-muted hover:text-on-surface hover:bg-surface-elevated rounded font-body-sm text-body-sm transition-colors text-left" onclick="quickInlineAdd('kamis')" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>Add card</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Editorial Low-Fi Quick-Add Footer Strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm mt-space-xl p-space-md rounded bg-surface-container-low text-text-muted">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-text-primary">N</kbd>
+<span>New Card</span>
+</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-text-primary">D</kbd>
+<span>Toggle Done</span>
+</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-text-primary">ESC</kbd>
+<span>Clear Filter</span>
+</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm">AUTOSAVE: REALTIME LOCAL CACHE</span>
+<span class="w-2 h-2 rounded-full bg-accent-green"></span>
+</div>
+</div>
+<!-- Table View Alternative (Hidden by Default, toggled via JavaScript) -->
+<div class="hidden flex-col w-full rounded bg-surface-container-low p-space-md mt-space-md" id="table-container">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Schedule Records Grid</span>
+<span class="font-label-sm text-label-sm text-text-muted">11 Active Records</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-text-muted font-label-sm text-label-sm uppercase bg-surface-container">
+<th class="py-2 px-3">Hari</th>
+<th class="py-2 px-3">Waktu</th>
+<th class="py-2 px-3">Kategori</th>
+<th class="py-2 px-3">Aktivitas</th>
+<th class="py-2 px-3">Status</th>
+</tr>
+</thead>
+<tbody class="text-text-secondary">
+<tr class="hover:bg-surface-elevated/40 transition-colors">
+<td class="py-2.5 px-3 font-label-md text-label-md text-accent-green">Senin</td>
+<td class="py-2.5 px-3 text-text-muted">06.00 - 07.00</td>
+<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full bg-accent-yellow/20 text-accent-yellow font-label-sm text-label-sm">Olahraga</span></td>
+<td class="py-2.5 px-3 text-text-primary">Jalan 45 Menit (x2)</td>
+<td class="py-2.5 px-3"><span class="text-accent-green font-label-sm text-label-sm">Completed</span></td>
+</tr>
+<tr class="hover:bg-surface-elevated/40 transition-colors">
+<td class="py-2.5 px-3 font-label-md text-label-md text-accent-green">Senin</td>
+<td class="py-2.5 px-3 text-text-muted">07.00 - 08.00</td>
+<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full bg-accent-blue-subtle text-secondary font-label-sm text-label-sm">Hiburan</span></td>
+<td class="py-2.5 px-3 text-text-primary">Baca Atomic Habits</td>
+<td class="py-2.5 px-3"><span class="text-accent-green font-label-sm text-label-sm">Completed</span></td>
+</tr>
+<tr class="hover:bg-surface-elevated/40 transition-colors">
+<td class="py-2.5 px-3 font-label-md text-label-md text-accent-green">Senin</td>
+<td class="py-2.5 px-3 text-text-muted">08.00 - 11.00</td>
+<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full bg-accent-terracotta-subtle text-accent-terracotta font-label-sm text-label-sm">Skripsi</span></td>
+<td class="py-2.5 px-3 text-text-muted line-through">Ga ada</td>
+<td class="py-2.5 px-3"><span class="text-accent-terracotta font-label-sm text-label-sm">Canceled</span></td>
+</tr>
+<tr class="hover:bg-surface-elevated/40 transition-colors">
+<td class="py-2.5 px-3 font-label-md text-label-md text-accent-terracotta">Selasa</td>
+<td class="py-2.5 px-3 text-text-muted">08.00 - 12.00</td>
+<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full bg-accent-terracotta-subtle text-accent-terracotta font-label-sm text-label-sm">Skripsi</span></td>
+<td class="py-2.5 px-3 text-text-muted line-through">Tulis Pendahuluan Paragraf 1-2</td>
+<td class="py-2.5 px-3"><span class="text-accent-terracotta font-label-sm text-label-sm">Canceled</span></td>
+</tr>
+<tr class="hover:bg-surface-elevated/40 transition-colors">
+<td class="py-2.5 px-3 font-label-md text-label-md text-secondary">Rabu</td>
+<td class="py-2.5 px-3 text-text-muted">19.00 - 21.00</td>
+<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full bg-accent-green-subtle text-accent-green font-label-sm text-label-sm">Kuliah</span></td>
+<td class="py-2.5 px-3 text-text-primary">Bootcamp Business Intelligence Analyst with Power BI</td>
+<td class="py-2.5 px-3"><span class="text-text-muted font-label-sm text-label-sm">Not Started</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Interactive Modal for Adding Tasks -->
+<div class="fixed inset-0 bg-surface/80 backdrop-blur-sm z-50 hidden items-center justify-center p-space-md" id="add-modal">
+<div class="w-full max-w-md rounded bg-surface-elevated p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-terracotta text-[18px]">add_circle</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">New Dossier Record</span>
+</div>
+<button class="text-text-muted hover:text-on-surface" onclick="closeNewCardModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted">TARGET DAY / COLUMN</span>
+<select class="bg-surface-container px-3 py-1.5 rounded text-on-surface font-body-sm text-body-sm outline-none" id="modal-target-col">
+<option value="senin">Senin (Monday)</option>
+<option value="selasa">Selasa (Tuesday)</option>
+<option value="rabu">Rabu (Wednesday)</option>
+<option value="kamis">Kamis (Thursday)</option>
+</select>
+</label>
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted">TIME WINDOW</span>
+<input class="bg-surface-container px-3 py-1.5 rounded text-on-surface font-body-sm text-body-sm outline-none placeholder:text-text-muted" id="modal-time-window" placeholder="e.g. 08.00 - 10.00" type="text"/>
+</label>
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted">CATEGORY TAG</span>
+<select class="bg-surface-container px-3 py-1.5 rounded text-on-surface font-body-sm text-body-sm outline-none" id="modal-category">
+<option value="Skripsi">Skripsi (Terracotta)</option>
+<option value="Kuliah">Kuliah (Green)</option>
+<option value="Olahraga">Olahraga (Yellow)</option>
+<option value="Hiburan">Hiburan (Blue)</option>
+<option value="Coding">Coding (Green)</option>
+</select>
+</label>
+<label class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-muted">TASK DESCRIPTION</span>
+<input class="bg-surface-container px-3 py-1.5 rounded text-on-surface font-body-sm text-body-sm outline-none placeholder:text-text-muted" id="modal-task-desc" placeholder="e.g. Baca Paper IEEE Bab 3" type="text"/>
+</label>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-xs">
+<button class="px-3 py-1.5 rounded text-text-muted hover:text-on-surface font-body-sm text-body-sm" onclick="closeNewCardModal()" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-1.5 rounded bg-primary text-on-primary font-headline-sm text-headline-sm transition-colors" onclick="submitModalCard()" type="button">
+          Append Card
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // View Toggle Handling
+  const boardBtn = document.getElementById('view-board-btn');
+  const tableBtn = document.getElementById('view-table-btn');
+  const boardContainer = document.getElementById('board-container');
+  const tableContainer = document.getElementById('table-container');
+
+  boardBtn.addEventListener('click', () => {
+    boardBtn.className = "flex items-center gap-1.5 px-3 py-1 rounded bg-surface-elevated text-on-surface font-label-md text-label-md transition-colors";
+    tableBtn.className = "flex items-center gap-1.5 px-3 py-1 rounded text-text-muted hover:text-on-surface font-label-md text-label-md transition-colors";
+    boardContainer.classList.remove('hidden');
+    boardContainer.classList.add('grid');
+    tableContainer.classList.add('hidden');
+    tableContainer.classList.remove('flex');
+  });
+
+  tableBtn.addEventListener('click', () => {
+    tableBtn.className = "flex items-center gap-1.5 px-3 py-1 rounded bg-surface-elevated text-on-surface font-label-md text-label-md transition-colors";
+    boardBtn.className = "flex items-center gap-1.5 px-3 py-1 rounded text-text-muted hover:text-on-surface font-label-md text-label-md transition-colors";
+    boardContainer.classList.add('hidden');
+    boardContainer.classList.remove('grid');
+    tableContainer.classList.remove('hidden');
+    tableContainer.classList.add('flex');
+  });
+
+  // Modal Controllers
+  function openNewCardModal() {
+    const modal = document.getElementById('add-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeNewCardModal() {
+    const modal = document.getElementById('add-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function submitModalCard() {
+    const col = document.getElementById('modal-target-col').value;
+    const time = document.getElementById('modal-time-window').value || '10.00 - 12.00';
+    const cat = document.getElementById('modal-category').value;
+    const desc = document.getElementById('modal-task-desc').value || 'New Scheduled Activity';
+
+    const targetList = document.getElementById(`cards-${col}`);
+    if (!targetList) return;
+
+    let catColorClass = 'bg-accent-blue-subtle text-secondary';
+    if (cat === 'Skripsi') catColorClass = 'bg-accent-terracotta-subtle text-accent-terracotta';
+    if (cat === 'Kuliah' || cat === 'Coding') catColorClass = 'bg-accent-green-subtle text-accent-green';
+    if (cat === 'Olahraga') catColorClass = 'bg-accent-yellow/20 text-accent-yellow';
+
+    const card = document.createElement('div');
+    card.className = "group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer";
+    card.innerHTML = `
+      <div class="flex items-center justify-between mb-1.5">
+        <div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+          <span class="material-symbols-outlined text-[14px]">description</span>
+          <span>New page</span>
+        </div>
+        <span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+        <span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm ${catColorClass}">${cat}</span>
+      </div>
+      <span class="font-body-sm text-body-sm text-text-muted mb-1.5">${time}</span>
+      <div class="flex items-center gap-1.5 text-text-primary font-body-sm text-body-sm mb-2">
+        <span class="material-symbols-outlined text-[14px] text-text-muted">bookmark</span>
+        <span>${desc}</span>
+      </div>
+      <div class="flex items-center">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-text-muted">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-yellow"></span>
+          <span>In Progress</span>
+        </span>
+      </div>
+    `;
+
+    targetList.appendChild(card);
+    closeNewCardModal();
+  }
+
+  function quickInlineAdd(colId) {
+    const title = prompt(`Add immediate task to ${colId.toUpperCase()}:`, 'Review Journal Reference');
+    if (!title) return;
+
+    const targetList = document.getElementById(`cards-${colId}`);
+    if (!targetList) return;
+
+    const card = document.createElement('div');
+    card.className = "group relative flex flex-col p-space-sm rounded bg-surface-elevated hover:bg-surface-variant transition-colors cursor-pointer";
+    card.innerHTML = `
+      <div class="flex items-center justify-between mb-1.5">
+        <div class="flex items-center gap-1.5 text-text-muted group-hover:text-on-surface-variant font-label-sm text-label-sm">
+          <span class="material-symbols-outlined text-[14px]">description</span>
+          <span>New page</span>
+        </div>
+        <span class="material-symbols-outlined text-[14px] text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+      </div>
+      <span class="font-body-sm text-body-sm text-text-muted mb-1.5">Fleksibel</span>
+      <div class="flex items-center gap-1.5 text-text-primary font-body-sm text-body-sm mb-2">
+        <span class="material-symbols-outlined text-[14px] text-accent-terracotta">push_pin</span>
+        <span>${title}</span>
+      </div>
+      <div class="flex items-center">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-text-muted">
+          <span class="w-1.5 h-1.5 rounded-full bg-text-muted"></span>
+          <span>Drafted</span>
+        </span>
+      </div>
+    `;
+    targetList.appendChild(card);
+  }
+
+  function addNewColumnPrompt() {
+    const day = prompt("Enter new column day name (e.g. Jumat, Sabtu, Minggu):", "Jumat");
+    if (!day) return;
+
+    const board = document.getElementById('board-container');
+    const newColId = day.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const colEl = document.createElement('div');
+    colEl.className = "flex flex-col rounded bg-surface-container p-space-sm shadow-sm gap-space-sm transition-all";
+    colEl.innerHTML = `
+      <div class="flex items-center justify-between px-space-xs py-1">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full font-label-md text-label-md bg-accent-blue-subtle text-secondary">
+            ${day}
+          </span>
+          <span class="font-label-sm text-label-sm text-text-muted">0</span>
+        </div>
+        <div class="flex items-center gap-1 text-text-muted">
+          <button type="button" class="hover:text-on-surface p-0.5 rounded transition-colors"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button>
+        </div>
+      </div>
+      <div class="flex flex-col gap-space-xs" id="cards-${newColId}">
+        <div class="p-space-md rounded bg-surface-container-low flex flex-col items-center justify-center text-center gap-1 hover:bg-surface-elevated cursor-pointer transition-colors" onclick="quickInlineAdd('${newColId}')">
+          <span class="material-symbols-outlined text-text-muted text-[20px]">add_circle_outline</span>
+          <span class="font-label-sm text-label-sm text-text-muted">Drop task here</span>
+        </div>
+      </div>
+      <div class="mt-space-xs pt-1">
+        <button type="button" onclick="quickInlineAdd('${newColId}')" class="w-full flex items-center gap-1.5 px-space-xs py-1.5 text-text-muted hover:text-on-surface hover:bg-surface-elevated rounded font-body-sm text-body-sm transition-colors text-left">
+          <span class="material-symbols-outlined text-[15px]">add</span>
+          <span>Add card</span>
+        </button>
+      </div>
+    `;
+    board.appendChild(colEl);
+  }
+
+  // Theme Palette Toggle (cycles pillar tints)
+  const paletteBtn = document.getElementById('palette-toggle-btn');
+  let highContrast = false;
+  paletteBtn.addEventListener('click', () => {
+    highContrast = !highContrast;
+    const columns = document.querySelectorAll('[data-col]');
+    columns.forEach(col => {
+      if (highContrast) {
+        col.classList.add('ring-1', 'ring-surface-variant');
+      } else {
+        col.classList.remove('ring-1', 'ring-surface-variant');
+      }
+    });
+  });
+</script></div></main></div></body></html>
