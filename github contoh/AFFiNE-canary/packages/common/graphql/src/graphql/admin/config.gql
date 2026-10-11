@@ -1,4 +1,0 @@
-query appConfig {
-  appConfig
-  appConfigMetadata
-}

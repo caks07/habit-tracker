@@ -1,3 +1,0 @@
-mutation revokeMcpCredential($id: ID!, $workspaceId: String!) {
-  revokeMcpCredential(id: $id, workspaceId: $workspaceId)
-}
